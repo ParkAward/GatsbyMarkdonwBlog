@@ -1,190 +1,112 @@
-<div align="center">
-  <h1>
+##### 사용 스택
+- GatsbyJs
+- <a href='https://chakra-ui.com/'>chakra</a>
 
-  ✍️
 
-  Handmade Blog
 
-  [![build](https://img.shields.io/github/workflow/status/ParkSB/handmade-blog/Node%20CI/master?style=flat-square)](https://github.com/ParkSB/handmade-blog/actions?query=workflow%3A%22Node+CI%22) ![node](https://img.shields.io/badge/node-%3E%3D%2010.0-brightgreen?style=flat-square) [![demo](https://img.shields.io/netlify/3f01acb3-1107-470a-914f-90d100b87d85?label=demo&style=flat-square)](https://handmade-blog.netlify.com/) [![license](https://img.shields.io/github/license/ParkSB/handmade-blog?style=flat-square)](LICENSE)
+-------
+<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+<p align="center">
+  <a href="https://www.gatsbyjs.com">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby's blog starter
+</h1>
 
-  </h1>
-  
-  <strong>Read this document in another language:</strong> [:kr:](README-KO.md) [:indonesia:](README-ID.md) [:brazil:](README-PT-BR.md) [:it:](README-IT.md) [:malaysia:](README-MS.md) [:greece:](README-EL.md)
-</div>
+Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
-Handmade Blog is a lightweight static blog generator for people who want to start a blog quickly. It supports article type document for a blog post, work type document for portfolio, code highlights, [KaTeX](https://katex.org/) syntax, footnotes, and more.
+_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
 
-## Demo: [Here](https://handmade-blog.netlify.com/)
+## 🚀 Quick start
 
-![Article page preview](https://user-images.githubusercontent.com/6410412/74097056-be43d100-4b4a-11ea-806b-7bd263d7f623.png)
+1.  **Create a Gatsby site.**
 
-## Getting Started
+    Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/part-0/#gatsby-cli)) to create a new site, specifying the blog starter.
 
-1. Click the 'Use this template' button above the file list to create a new repository. If you want to use github.io domain, have to name the repository `{YOUR_ID}.github.io`. (e.g., `betty-grof.github.io`) Don't forget to enable the 'Include all branches' option.
-
-    ![Click the 'Use this template' button](https://user-images.githubusercontent.com/6410412/93741226-f524ae00-fc26-11ea-8f88-ba634d2de66b.png)
-
-    ![Name repository to id.github.io, and enable 'Include all branches' option](https://user-images.githubusercontent.com/6410412/93741223-f48c1780-fc26-11ea-9980-8911e531a29c.png)
-
-2. Click the 'Settings' tab in your repository, and set the source branch for GitHub Pages to `gh-pages` branch. GitHub Pages will host your website based on `gh-pages` branch. You'll be able to access the website via `https://{YOUR_ID}.github.io/` in a few minutes.
-
-    ![Click the 'Settings' tab](https://user-images.githubusercontent.com/6410412/93750006-d11c9900-fc35-11ea-9ac1-4f92216f28f9.png)
-
-    ![Set source branch of the github pages to gh-pages branch](https://user-images.githubusercontent.com/6410412/93741218-f2c25400-fc26-11ea-9e30-eddb9a2a3b3f.png)
-
-3. Clone the repository, and install node packages.
-
-    ```shell script
-    $ git clone https://github.com/{YOUR_ID}/{REPOSITORY_NAME}.git # git clone https://github.com/betty-grof/betty-grof.github.io.git
-    $ cd {REPOSITORY_NAME} # cd betty-grof.github.io
-    $ npm install
+    ```shell
+    # create a new Gatsby site using the blog starter
+    gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
     ```
 
-4. Modify `config.json` file in `services` directory to set your blog title and subtitle.
+1.  **Start developing.**
 
-    ```json
-    {
-      "blogTitle": "Betty Grof",
-      "blogSubtitle": "Oh My Glob",
-      "article": {
-        "tableOfContents": true 
-      }
-    }
+    Navigate into your new site’s directory and start it up.
+
+    ```shell
+    cd my-blog-starter/
+    gatsby develop
     ```
 
-5. Start a local server at `http://localhost:1234/`. `npm start` script opens the local server based on `server` directory.
+1.  **Open the source code and start editing!**
 
-    ```shell script
-    $ npm start
-    ```
-   
-    ![The website that is titled 'Betty Grof' at http://localhost:1234/](https://user-images.githubusercontent.com/6410412/93754683-155f6780-fc3d-11ea-99de-92c747c103f9.png)
-    
-6. Commit and push the changes in your working directory to the remote repository.
+    Your site is now running at `http://localhost:8000`!
 
-   ```shell script
-   $ git add ./services/config.json
-   $ git commit -m "Set the blog title and subtitle"
-   $ git push origin master
-   ```
+    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby Tutorial](https://www.gatsbyjs.com/docs/tutorial/part-4/#use-graphiql-to-explore-the-data-layer-and-write-graphql-queries)._
 
-7. Run `deploy` script if you're ready to host the website. This script builds local files to `dist` directory and pushes it to `gh-pages` branch that contains only the files in `dist` directory. GitHub Pages will host your website at `https://{YOUR_ID}.github.io/` based on `gh-pages` branch automatically.
+    Open the `my-blog-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-    ```shell script
-    $ npm run deploy
-    ```
+## 🚀 Quick start (Gatsby Cloud)
 
-## Usage
+Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
-### Write and publish a document
+[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-blog)
 
-1. Write a document in `_articles` or `_works` directory.
+## 🧐 What's inside?
 
-1. Run `npm run publish article` or `npm run publish work` script to convert markdown documents to HTML.
+A quick look at the top-level files and directories you'll see in a Gatsby project.
 
-1. Preview converted document on the local server using `npm start` script.
+    .
+    ├── node_modules
+    ├── src
+    ├── .gitignore
+    ├── .prettierrc
+    ├── gatsby-browser.js
+    ├── gatsby-config.js
+    ├── gatsby-node.js
+    ├── gatsby-ssr.js
+    ├── LICENSE
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
 
-1. Commit and push the changes to the repository, and run `npm run deploy` to deploy.
+1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
-### Change a page
+2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
-Modify an ejs template to change the contents of the existing page. For example, if you want to put an image to the landing page, open the `app/templates/index.ejs` file, and add `img` tag to the `main-container` element.
+3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-```html
-<main id="main-container">
-  <img src="../assets/profile.jpg" alt="My profile picture" />
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-</main>
-```
+4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
-Then, run `npm run publish page` script to publish the modified landing page and preview changes on the local server using `npm start` script.
+5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-```shell script
-$ npm run publish page
-$ npm start
-```
+6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/) for more detail).
 
-If you're ready to deploy, run `npm run deploy` script. You can change not only the landing page but any pages like this way. (You may need to understand the project structure.)
+7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-### Project structure
+8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-* `_articles` - Markdown files for the blog posts.
-* `_works` - Markdown files for the portfolio.
-* `app`
-  * `assets` - Any files to be imported by HTML files such as image, font, etc.
-  * `public` - HTML files generated by `publish` script. `server` and `dist` directory is based on this directory. Do not change the files under this directory directly.
-    * `article` - HTML files converted from `_articles` directory.
-    * `work` - HTML files converted from `_works` directory.
-  * `src` - Source code to be imported by HTML files.
-    * `css` - CSS files generated by `build` script.
-    * `scss`
-    * `ts`
-  * `static` - Any static files that aren't compiled by `build` script like `robots.txt`, `sitemap.xml`, or SEO files. `build` script copies all files under this directory to `dist` directory. 
-  * `templates` - EJS template files. `publish` script converts templates under this directory to HTML files.
-* `dist` - Files compiled by `build` script. `deploy` script deploys a website to GitHub pages based on this directory. Do not change the files under this directory directly.
-* `server` - Files compiled by `build` script. `start` script opens local server based on this directory. Do not change the files under this directory directly.
-* `services` - Source code implementing `publish` script.
-  * `classes`
-  * `models`
-* `tools` - Source code implementing various npm scripts.
+9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
 
-## Showcase
+10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
-* parksb.github.io: https://github.com/parksb/parksb.github.io
-* betty-grof.github.io: https://github.com/betty-grof/betty-grof.github.io
+11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
-## Available Scripts
+12. **`README.md`**: A text file containing useful reference information about your project.
 
-### `npm start`
+## 🎓 Learning Gatsby
 
-Starts local development server at http://localhost:1234/.
+Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
 
-### `npm run publish`
+- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
-Converts templates to HTML files.
+- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
-```shell script
-$ npm run publish article
-```
+## 💫 Deploy
 
-Converts all articles.
+[Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/products/cloud/)
 
-```shell script
-$ npm run publish works
-```
+Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
 
-Converts all works.
-
-```shell script
-$ npm run publish article 5
-```
-
-Converts an article which id is 5.
-
-```shell script
-$ npm run publish work 3
-```
-
-Converts a work which id is 3.
-
-```shell script
-$ npm run publish page
-```
-
-Converts all pages.
-
-### `npm run watch`
-
-Rebuilds template files in `templates` directory and markdown files in `_articles` directory automatically whenever the files are modified.
-
-### `npm run build`
-
-Builds files with parcel bundler.
-
-### `npm run deploy`
-
-Builds and deploys the files.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+<!-- AUTO-GENERATED-CONTENT:END -->
