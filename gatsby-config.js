@@ -79,7 +79,8 @@ module.exports = {
       resolve: '@chakra-ui/gatsby-plugin',
       options: {
         resetCss: true,
-        isUsingColorMode : true,
+        isUsingColorMode : false,
+        portalZIndex: 40,
       }
     }
   ],

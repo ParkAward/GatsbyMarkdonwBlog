@@ -1,15 +1,14 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
-import {Box} from '@chakra-ui/react'
+import { graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
+import CategoriesSelector from "../components/posts/CategoriesSelector"
+import Posts from "../components/posts"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -27,51 +26,13 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      {/* <Bio /> */}
-      {posts.map(post =>{
-        const title = post.frontmatter.title || post.fields.slug
-        return(
-          <Box key={post.fields.slug} maxW='sm' borderWidth='1px' borderRadius='1g' overflow='hidden'>
-            <Box p='6'>
-                {post.fields.slug}
-                {post.frontmatter.title}
-            </Box>
-          </Box>
-        )
-      })}    
-
-      {/* <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol> */}
+      <header>
+        <CategoriesSelector/>
+      </header>
+      <section>
+        {/* <Bio /> */}
+      <Posts posts={posts}/>
+      </section>
     </Layout>
   )
 }
@@ -79,24 +40,25 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
+query{
+  site {
+    siteMetadata {
+      title
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
+  }
+  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+    nodes {
+      excerpt(pruneLength: 100, truncate: true)
+      fields {
+        slug
+      }
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        category
+        reading
       }
     }
   }
+}
 `

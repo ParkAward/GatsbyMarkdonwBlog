@@ -5,19 +5,18 @@ export default function Header({isRootPath, title}) {
 
   return (
     <header>
-        <Flex  w='100%' p={'8px 0'} borderBottom={'1px black solid'} mb={3}>
+        <Flex  w='100%' p={'8px 0'} borderBottom={'1px black solid'} mb={3} bg={"transparent"}>
             <Box>
                 <Link to='/'>
-                    <Heading as='h1' size='1x1' noOfLines={1}>{title}</Heading>
+                    <Heading as='h1' size='1x1' pl={10} noOfLines={1}>{title}</Heading>
                 </Link>
             </Box>
             <Spacer />
             <Flex alignSelf={'center'} pr={70} w={120}>
-                <Link to='/About'>About</Link>
+                {/* <Link to='/About'>About</Link>
                 <Spacer/>
-                <Link to='/Blog'>Blog</Link>
+                <Link to='/Blog'>Blog</Link> */}
             </Flex>
-            
         </Flex>
     </header>
   )
