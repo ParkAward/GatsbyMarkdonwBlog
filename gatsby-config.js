@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/ParkAward.github.io",
   siteMetadata: {
     title: `Gatsby Starter Blog`,
     author: {
