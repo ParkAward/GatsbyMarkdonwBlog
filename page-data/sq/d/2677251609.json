@@ -1,1 +1,1 @@
-{"data":{"allMarkdownRemark":{"distinct":["Category 1","Category 2"],"totalCount":11,"group":[{"totalCount":4},{"totalCount":4}]}}}
+{"data":{"allMarkdownRemark":{"distinct":["Category 1","Category 2","MarkTest"],"totalCount":9,"group":[{"totalCount":4},{"totalCount":4},{"totalCount":1}]}}}
