@@ -14,20 +14,21 @@ export default function TagSelector({handleCategories}) {
         }
     }
     `).allMarkdownRemark;
-    const Tags = distinct.map((name, idx) => `${name}(${group[idx].totalCount})`);
-    Tags.unshift(`ALL(${totalCount})`);
+    const Tags = distinct.map((name, idx) => [`${name}(${group[idx].totalCount})`, name]);
+    Tags.unshift([`ALL(${totalCount})`, 'ALL']);
     // console.log(distinct, group, totalCount, Tags);
   return (
     <>
     <Heading as={'h2'}>총 {totalCount}개의 포스트가 있습니다.🖋</Heading>
     <HStack w={'lg'} flexWrap={'wrap'} py={4}>
         {Tags.map(tag=><Button
-         key={tag}
+         key={tag[0]}
          borderRadius={10}
          shadow={'md'}
-         value={tag}
+         value={tag[1]}
+         onClick={handleCategories}
          >
-        {tag}
+        {tag[0]}
         </Button>)}
 
     </HStack >

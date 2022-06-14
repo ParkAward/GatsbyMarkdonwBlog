@@ -1,14 +1,21 @@
-import * as React from "react"
+import  React, { useMemo, useState } from "react"
 import { graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import CategoriesSelector from "../components/posts/CategoriesSelector"
+import CategoriesSelector from "../components/CategoriesSelector"
 import Posts from "../components/posts"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const posts = useMemo(()=>data.allMarkdownRemark.nodes);
+  const [category ,setCategory] = useState('ALL');
+
+  const handleCategories = (e) =>{
+    console.log(e.target);
+    setCategory(e.target.value);
+  }
+
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -27,11 +34,11 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <header>
-        <CategoriesSelector/>
+        <CategoriesSelector handleCategories={handleCategories}/>
       </header>
       <section>
         {/* <Bio /> */}
-      <Posts posts={posts}/>
+      <Posts posts={posts} category={category}/>
       </section>
     </Layout>
   )
