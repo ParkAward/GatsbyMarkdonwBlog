@@ -1,8 +1,20 @@
-import { Box, Button, Heading, HStack} from '@chakra-ui/react'
+import React, {useState, useEffect} from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import React from 'react'
+import {Button, Heading, HStack, Fade} from '@chakra-ui/react'
 
 export default function TagSelector({handleCategories}) {
+    const [scrollActive, setScrollActive] = useState(false);
+
+    useEffect(()=>{
+      window.addEventListener('scroll',()=>{
+        if(window.scrollY >= 100){
+          setScrollActive(true);
+        }else{
+          setScrollActive(false);
+
+        }
+      })
+    })
     const {distinct, group, totalCount} = useStaticQuery(graphql`
     {
         allMarkdownRemark {
@@ -30,8 +42,23 @@ export default function TagSelector({handleCategories}) {
          >
         {tag[0]}
         </Button>)}
-
     </HStack >
+
+    {scrollActive&&
+    <Fade in={scrollActive}>
+       <HStack w={'2xl'} flexWrap={'wrap'} py={4} pos="fixed" top={1}>
+          {Tags.map(tag=><Button
+          key={tag[0]}
+          borderRadius={10}
+          shadow={'md'}
+          value={tag[1]}
+          onClick={handleCategories}
+          >
+          {tag[0]}
+          </Button>)}
+      </HStack >
+    </Fade>}
+
     </>
   )
 }

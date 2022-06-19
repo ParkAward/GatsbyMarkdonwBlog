@@ -1,19 +1,21 @@
 module.exports = {
   pathPrefix: "/ParkAward.github.io",
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Root:p`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Park Award`,
+      summary: `관심사 IoT, Js, react, 업무 자동화(RPA, CICD), MQTTprotocol`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `지식의 깊이를 점점 키우고있는 ParkAward의 기술블로그 입니다.`,
+    siteUrl: `https://parkaward.github.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: ``,
     },
   },
   plugins: [
+    `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-image`,
+    `gatsby-remark-gifs`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

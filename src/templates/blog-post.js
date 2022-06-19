@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Box, Heading, Text } from "@chakra-ui/react"
@@ -14,7 +13,7 @@ const BlogPostTemplate = ({ data, location }) => {
   console.log(post);
   return (
     <Layout location={location} title={siteTitle}>
-      <Box maxW={"xl"}>
+      <Box maxW={{base: "xl", lg:'1240px'}}>
         <Seo
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
